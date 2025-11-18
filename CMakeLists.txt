@@ -4,6 +4,7 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Release>:Realease>")
 
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build SFML as static libraries" FORCE)
+set(SFML_STATIC_LIBRARIES TRUE)
 
 project(snake)
 
@@ -20,8 +21,7 @@ target_link_libraries("${CMAKE_PROJECT_NAME}"
 	sfml-graphics 
 	sfml-window 
 	sfml-system
-)
-target_link_options(snake PRIVATE 
+    pthread
     -static-libgcc 
     -static-libstdc++
 )
