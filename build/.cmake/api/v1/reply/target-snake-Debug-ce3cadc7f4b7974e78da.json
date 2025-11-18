@@ -14,6 +14,7 @@
 		"commands" : 
 		[
 			"add_executable",
+			"target_link_options",
 			"target_link_libraries",
 			"target_include_directories"
 		],
@@ -37,6 +38,12 @@
 			{
 				"command" : 1,
 				"file" : 0,
+				"line" : 25,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
 				"line" : 20,
 				"parent" : 0
 			},
@@ -44,28 +51,28 @@
 				"file" : 1
 			},
 			{
-				"command" : 1,
+				"command" : 2,
 				"file" : 1,
 				"line" : 312,
-				"parent" : 3
+				"parent" : 4
 			},
 			{
-				"command" : 1,
+				"command" : 2,
 				"file" : 1,
 				"line" : 327,
-				"parent" : 3
+				"parent" : 4
 			},
 			{
 				"file" : 2
 			},
 			{
-				"command" : 1,
+				"command" : 2,
 				"file" : 2,
 				"line" : 236,
-				"parent" : 6
+				"parent" : 7
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 19,
 				"parent" : 0
@@ -84,18 +91,18 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "SFML_STATIC"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 8,
+					"backtrace" : 9,
 					"path" : "C:/Users/Andrzej/Desktop/Snake/include"
 				},
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"path" : "C:/Users/Andrzej/Desktop/Snake/thirdparty/SFML/include"
 				}
 			],
@@ -112,23 +119,23 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 2,
+			"backtrace" : 3,
 			"id" : "sfml-system::@4dc4d4269c79c953adaa"
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 3,
 			"id" : "sfml-window::@d029ddebf0e8031c348a"
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 3,
 			"id" : "sfml-graphics::@74ecdd4e6c37056e28fd"
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 3,
 			"id" : "freetype::@d06f9f5ffc3cc0b4bd77"
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 3,
 			"id" : "harfbuzz::@0205adea4b0616362521"
 		}
 	],
@@ -143,41 +150,51 @@
 			},
 			{
 				"backtrace" : 2,
+				"fragment" : "-static-libgcc",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-static-libstdc++",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 3,
 				"fragment" : "thirdparty\\SFML\\lib\\libsfml-graphics-s-d.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 2,
+				"backtrace" : 3,
 				"fragment" : "thirdparty\\SFML\\lib\\libsfml-window-s-d.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 2,
+				"backtrace" : 3,
 				"fragment" : "thirdparty\\SFML\\lib\\libsfml-system-s-d.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
+				"backtrace" : 5,
 				"fragment" : "-lopengl32",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 6,
 				"fragment" : "-lwinmm",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 5,
+				"backtrace" : 6,
 				"fragment" : "-lgdi32",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 7,
+				"backtrace" : 8,
 				"fragment" : "thirdparty\\SFML\\lib\\libharfbuzzd.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 7,
+				"backtrace" : 8,
 				"fragment" : "thirdparty\\SFML\\lib\\libfreetyped.a",
 				"role" : "libraries"
 			},

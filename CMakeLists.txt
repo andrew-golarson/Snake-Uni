@@ -22,3 +22,7 @@ target_link_libraries("${CMAKE_PROJECT_NAME}"
 	sfml-window 
 	sfml-system
 )
+target_link_options(snake PRIVATE 
+    -static-libgcc 
+    -static-libstdc++
+)

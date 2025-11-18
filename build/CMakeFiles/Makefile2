@@ -1678,9 +1678,9 @@ _deps/sheenbidi-build/CMakeFiles/SheenBidi.dir/clean:
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: thirdparty/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all
-thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
-thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all
+thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all
+thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
 	$(MAKE) $(MAKESILENT) -f thirdparty\SFML\src\SFML\Audio\CMakeFiles\sfml-audio.dir\build.make thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/depend
 	$(MAKE) $(MAKESILENT) -f thirdparty\SFML\src\SFML\Audio\CMakeFiles\sfml-audio.dir\build.make thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Andrzej\Desktop\Snake\build\CMakeFiles --progress-num=18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34 "Built target sfml-audio"
