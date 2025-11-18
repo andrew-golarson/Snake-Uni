@@ -38,13 +38,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 25,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 20,
+				"line" : 19,
 				"parent" : 0
 			},
 			{
@@ -74,7 +74,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 19,
+				"line" : 18,
 				"parent" : 0
 			}
 		]
@@ -132,11 +132,11 @@
 		},
 		{
 			"backtrace" : 3,
-			"id" : "freetype::@d06f9f5ffc3cc0b4bd77"
+			"id" : "harfbuzz::@0205adea4b0616362521"
 		},
 		{
 			"backtrace" : 3,
-			"id" : "harfbuzz::@0205adea4b0616362521"
+			"id" : "freetype::@d06f9f5ffc3cc0b4bd77"
 		}
 	],
 	"id" : "snake::@6890427a1f51a3e7e1df",

@@ -508,11 +508,11 @@
 		},
 		{
 			"backtrace" : 5,
-			"id" : "freetype::@d06f9f5ffc3cc0b4bd77"
+			"id" : "harfbuzz::@0205adea4b0616362521"
 		},
 		{
 			"backtrace" : 5,
-			"id" : "harfbuzz::@0205adea4b0616362521"
+			"id" : "freetype::@d06f9f5ffc3cc0b4bd77"
 		},
 		{
 			"id" : "SheenBidi::@abdbacd89c8133eee2b6"
