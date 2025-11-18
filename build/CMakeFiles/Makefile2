@@ -485,8 +485,8 @@ thirdparty/SFML/src/SFML/Window/clean: thirdparty/SFML/src/SFML/Window/CMakeFile
 # All Build rule for target.
 CMakeFiles/snake.dir/all: thirdparty/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
 CMakeFiles/snake.dir/all: thirdparty/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
-CMakeFiles/snake.dir/all: thirdparty/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 CMakeFiles/snake.dir/all: _deps/freetype-build/CMakeFiles/freetype.dir/all
+CMakeFiles/snake.dir/all: thirdparty/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 CMakeFiles/snake.dir/all: _deps/harfbuzz-build/CMakeFiles/harfbuzz.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/build
