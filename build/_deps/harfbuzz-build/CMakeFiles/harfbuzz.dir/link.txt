@@ -1,0 +1,2 @@
+C:\mingw64\bin\ar.exe qc ..\..\thirdparty\SFML\lib\libharfbuzzd.a CMakeFiles/harfbuzz.dir/src/harfbuzz.cc.obj
+C:\mingw64\bin\ranlib.exe ..\..\thirdparty\SFML\lib\libharfbuzzd.a
