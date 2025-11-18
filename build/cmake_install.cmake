@@ -42,6 +42,14 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Users/Andrzej/Desktop/Snake/build/thirdparty/SFML/cmake_install.cmake")
 endif()
 
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE FILE OPTIONAL FILES
+    "C:/mingw64/bin/libwinpthread-1.dll"
+    "C:/mingw64/bin/libgcc_s_seh-1.dll"
+    "C:/mingw64/bin/libstdc++-6.dll"
+    )
+endif()
+
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)

@@ -21,7 +21,14 @@ target_link_libraries("${CMAKE_PROJECT_NAME}"
 	sfml-graphics 
 	sfml-window 
 	sfml-system
-    pthread
-    -static-libgcc 
-    -static-libstdc++
+)
+
+set(MINGW_BIN_DIR "C:/mingw64/bin") 
+
+install(FILES
+    "${MINGW_BIN_DIR}/libwinpthread-1.dll"
+    "${MINGW_BIN_DIR}/libgcc_s_seh-1.dll"
+    "${MINGW_BIN_DIR}/libstdc++-6.dll"
+    DESTINATION bin
+    OPTIONAL
 )

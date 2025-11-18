@@ -1678,8 +1678,8 @@ _deps/sheenbidi-build/CMakeFiles/SheenBidi.dir/clean:
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: thirdparty/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all
-thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all
+thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all
 	$(MAKE) $(MAKESILENT) -f thirdparty\SFML\src\SFML\Audio\CMakeFiles\sfml-audio.dir\build.make thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/depend
 	$(MAKE) $(MAKESILENT) -f thirdparty\SFML\src\SFML\Audio\CMakeFiles\sfml-audio.dir\build.make thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build
