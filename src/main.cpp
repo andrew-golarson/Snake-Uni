@@ -1,11 +1,9 @@
 #include "game.h"
 #include "mainMenu.h"
 int main(){
-    menu:
-        if(Game::goToMainMenu){
-            Game::gameOver = false;
-            Game::paused = false;
-            Game::goToMainMenu = false;
+    while(true){
+        if(MainMenu::quit || Game::quit){
+            return 0;
         }
         MainMenu menu;
         while(menu.menuOpen()){
@@ -13,14 +11,13 @@ int main(){
             menu.update();
         }
         if(menu.play){
+            Game::gameOver = false;
+            Game::paused = false;
             Game snakeGame;
             while(snakeGame.Open()){
                     snakeGame.render();
                     snakeGame.update();
             }
         }
-    if(Game::goToMainMenu){
-        menu.play = false;
-        goto menu;
     }
 }   

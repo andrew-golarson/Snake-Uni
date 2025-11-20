@@ -2,7 +2,7 @@
 #include "mainMenu.h"
 #include "grid.h"
 #include <random>
-#include <string>
+
 
 std::random_device rd; // do generacji losowej pozycji owoca
 std::mt19937 gen(rd());
@@ -21,6 +21,7 @@ struct Fruit{
     static int fruitEaten;
 };
 
+bool Game::quit = false;
 Player pSnake[1600]; // segmenty snakea
 int Player::snakeSize = 3; // długość węża
 int Fruit::fruitEaten = 0;
@@ -28,15 +29,14 @@ Fruit apple; // owoc
 Grid tilemap[Grid::gridSize][Grid::gridSize];
 enum Direction{Down, Left, Right, Up} direction; // enum do przechowywania aktualnego kierunku ruchu
 
-bool Game::gameOver = false; // definicje static
-bool Game::goToMainMenu = false;
+// definicje zmiennych static
+bool Game::gameOver = false; 
 bool Game::paused = false;
-
 
 void Game::initVariables(){
     //OKNO
     window = new sf::RenderWindow(sf::VideoMode({640,640}), "Snake", sf::Style::Close | sf::Style::Titlebar ); // okno
-    window -> setFramerateLimit(60); // FPS
+    window -> setFramerateLimit(60);
     window -> setKeyRepeatEnabled(false);
 
     // UI
@@ -80,7 +80,7 @@ void snakeMove(){
     for(int i = Player::snakeSize; i > 0; i--){
         pSnake[i].x = pSnake[i-1].x; // pozycja następnego segmentu na miejsce poprzedniego
         pSnake[i].y = pSnake[i-1].y;
-        if(i>3){
+        if(i>3){ // żeby nie było kolizji na samym starcie gry
             if((pSnake[0].x == pSnake[i].x) && (pSnake[0].y == pSnake[i].y)){ // detekcja kolizji z segmentami węża
                 Game::gameOver = true;
             }
@@ -113,6 +113,7 @@ const bool Game::Open() const{  // sprawdzanie czy okno jest dalej otwarte
 void Game::update(){
     while(const std::optional event = window->pollEvent()){    // sprawdza czy jakieś eventy są od ostatniego odświeżenia    
             if(event -> is<sf::Event::Closed>()){   // zamknięcie okna
+                Game::quit = true;
                 window->close();
             }
             if(!paused && !gameOver){
@@ -121,16 +122,16 @@ void Game::update(){
                 bool left = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left);
                 bool right = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right);
 
-                int pressCount = (int)up + (int)down + (int)left + (int)right;
+                int pressCount = (int)up + (int)down + (int)left + (int)right; // sprawdza liczbę naciśniętych przycisków
 
-                if (pressCount == 1) {
-                    if (up && direction != Down) {
+                if (pressCount == 1) { // tylko jeśli jeden przycisk naciśnięty naraz
+                    if (up && direction != Down) { // ruch w górę
                         direction = Up;
-                    } else if (down && direction != Up) {
+                    } else if (down && direction != Up) { // ruch w dół
                         direction = Down;
-                    } else if (left && direction != Right) {
+                    } else if (left && direction != Right) { // ruch w lewo
                         direction = Left;
-                    } else if (right && direction != Left) {
+                    } else if (right && direction != Left) { // ruch w prawo
                         direction = Right;
                     }
                 }
@@ -148,6 +149,7 @@ void Game::update(){
                 if(pauseQuitButton.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePosition))){ 
                     pauseQuitButton.setFillColor(sf::Color::Red); // kolor czerwony przy najechaniu
                     if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
+                        Game::quit = true;
                         window -> close();
                     }
                 }else{
@@ -157,7 +159,6 @@ void Game::update(){
                 if(pauseMainMenuButton.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePosition))){ 
                     pauseMainMenuButton.setFillColor(sf::Color::Red); // kolor czerwony przy najechaniu
                     if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
-                        goToMainMenu = true;
                         window -> close();
                     }
                 }else{
@@ -168,6 +169,7 @@ void Game::update(){
                 if(gameOverQuitButton.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePosition))){ 
                     gameOverQuitButton.setFillColor(sf::Color::Red); // kolor czerwony przy najechaniu
                     if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
+                        Game::quit = true;
                         window -> close();
                     }
                 }else{
@@ -177,7 +179,6 @@ void Game::update(){
                 if(gameOverMainMenuButton.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePosition))){ 
                     gameOverMainMenuButton.setFillColor(sf::Color::Red); // kolor czerwony przy najechaniu
                     if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
-                        goToMainMenu = true;
                         window -> close();
                     }
                 }else{
@@ -325,11 +326,13 @@ void Game::render(){
     window -> display(); // wyświetlenie wszystkiego
 }
 
+
+
 Game::Game():
-    headTex("resources/head.png"), // inicjalizacja tekstur
-    bodyTex("resources/body.png"),
-    tailTex("resources/tail.png"),
-    turnBodyTex("resources/turnBody.png"),
+    headTex(getHeadSkinPath(MainMenu::skin)), // inicjalizacja tekstur
+    bodyTex(getBodySkinPath(MainMenu::skin)),
+    tailTex(getTailSkinPath(MainMenu::skin)),
+    turnBodyTex(getTurnBodySkinPath(MainMenu::skin)),
     fruitTex("resources/Apple.png"),
     head(headTex), //inicjalizacja spriteow teksturami
     body(bodyTex),
@@ -346,10 +349,11 @@ Game::Game():
     hungerBarText(font, "400/400", 23)
 {
     initVariables();
-    Grid::initTilemap(tilemap);
+    Grid::initTilemap(tilemap); //inicjalizacja mapy
 }
 
 Game::~Game(){
+    // dla resetu stanu gry
     Player::snakeSize = 3;
     Fruit::fruitEaten = 0;
     direction = Down;
@@ -357,4 +361,110 @@ Game::~Game(){
     pSnake[0].y = Grid::tileSize/2;
     delete window;
     delete clock;
+}
+
+// defincje statycznych funkcji
+
+std::string Game::getHeadSkinPath(int skin){
+    std::string path{};
+    switch(skin){
+        case 1:
+            path = "resources/head.png";
+            break;
+        case 2:
+            path = "resources/head1.png";
+            break;
+        case 3:
+            path = "resources/head2.png";
+            break;
+        case 4:
+            path = "resources/head4.png";
+            break;
+        case 5:
+            path = "resources/head5.png";
+            break;
+        case 6:
+            path = "resources/head6.png";
+            break;
+    }
+
+    return path;
+}
+
+std::string Game::getBodySkinPath(int skin){
+    std::string path{};
+    switch(skin){
+        case 1:
+            path = "resources/body.png";
+            break;
+        case 2:
+            path = "resources/body1.png";
+            break;
+        case 3:
+            path = "resources/body2.png";
+            break;
+        case 4:
+            path = "resources/body4.png";
+            break;
+        case 5:
+            path = "resources/body5.png";
+            break;
+        case 6:
+            path = "resources/body6.png";
+            break;
+    }
+
+    return path;
+}
+
+std::string Game::getTailSkinPath(int skin){
+    std::string path{};
+    switch(skin){
+        case 1:
+            path = "resources/tail.png";
+            break;
+        case 2:
+            path = "resources/tail1.png";
+            break;
+        case 3:
+            path = "resources/tail2.png";
+            break;
+        case 4:
+            path = "resources/tail4.png";
+            break;
+        case 5:
+            path = "resources/tail5.png";
+            break;
+        case 6:
+            path = "resources/tail6.png";
+            break;
+    }
+
+    return path;
+}
+
+std::string Game::getTurnBodySkinPath(int skin){
+    std::string path{};
+    switch(skin){
+        case 1:
+            path = "resources/turnBody.png";
+            break;
+        case 2:
+            path = "resources/turnBody1.png";
+            break;
+        case 3:
+            path = "resources/turnBody2.png";
+            break;
+        case 4:
+            path = "resources/turnBody4.png";
+            break;
+        case 5:
+            path = "resources/turnBody5.png";
+            break;
+        case 6:
+            path = "resources/turnBody6.png";
+            break;
+    }
+
+    return path;
 }

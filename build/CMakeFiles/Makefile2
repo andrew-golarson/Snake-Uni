@@ -485,8 +485,8 @@ thirdparty/SFML/src/SFML/Window/clean: thirdparty/SFML/src/SFML/Window/CMakeFile
 # All Build rule for target.
 CMakeFiles/snake.dir/all: thirdparty/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
 CMakeFiles/snake.dir/all: thirdparty/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
-CMakeFiles/snake.dir/all: _deps/freetype-build/CMakeFiles/freetype.dir/all
 CMakeFiles/snake.dir/all: thirdparty/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
+CMakeFiles/snake.dir/all: _deps/freetype-build/CMakeFiles/freetype.dir/all
 CMakeFiles/snake.dir/all: _deps/harfbuzz-build/CMakeFiles/harfbuzz.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/build
@@ -1675,12 +1675,12 @@ _deps/sheenbidi-build/CMakeFiles/SheenBidi.dir/clean:
 # Target rules for target thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir
 
 # All Build rule for target.
-thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: thirdparty/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
-thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
-thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
 thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all
+thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: thirdparty/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
+thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
+thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/all: _deps/flac-build/src/libFLAC/CMakeFiles/FLAC.dir/all
 	$(MAKE) $(MAKESILENT) -f thirdparty\SFML\src\SFML\Audio\CMakeFiles\sfml-audio.dir\build.make thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/depend
 	$(MAKE) $(MAKESILENT) -f thirdparty\SFML\src\SFML\Audio\CMakeFiles\sfml-audio.dir\build.make thirdparty/SFML/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Andrzej\Desktop\Snake\build\CMakeFiles --progress-num=18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34 "Built target sfml-audio"
@@ -1808,8 +1808,8 @@ _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/clean:
 # Target rules for target _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir
 
 # All Build rule for target.
-_deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
 _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
+_deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\vorbis-build\lib\CMakeFiles\vorbisenc.dir\build.make _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\vorbis-build\lib\CMakeFiles\vorbisenc.dir\build.make _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Andrzej\Desktop\Snake\build\CMakeFiles --progress-num=98 "Built target vorbisenc"
@@ -1841,8 +1841,8 @@ _deps/vorbis-build/lib/CMakeFiles/vorbisenc.dir/clean:
 # Target rules for target _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir
 
 # All Build rule for target.
-_deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
 _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all: _deps/vorbis-build/lib/CMakeFiles/vorbis.dir/all
+_deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/all: _deps/ogg-build/CMakeFiles/ogg.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\vorbis-build\lib\CMakeFiles\vorbisfile.dir\build.make _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\vorbis-build\lib\CMakeFiles\vorbisfile.dir\build.make _deps/vorbis-build/lib/CMakeFiles/vorbisfile.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Andrzej\Desktop\Snake\build\CMakeFiles --progress-num=99,100 "Built target vorbisfile"
