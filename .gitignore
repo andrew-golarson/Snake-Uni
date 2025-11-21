@@ -1,0 +1,58 @@
+# Prerequisites
+*.d
+*.o
+*.obj
+*.elf
+*.exe
+*.proto
+*.pb.cc
+*.pb.h
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+snake
+snake.exe
+*.out
+*.app
+
+# CMake Build Folder
+build/
+cmake-build-debug/
+cmake-build-release/
+
+# CMake generated files (if created in source)
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+Makefile
+
+# IDE / Editor specific settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
