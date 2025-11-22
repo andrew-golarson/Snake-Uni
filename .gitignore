@@ -3,7 +3,6 @@
 *.o
 *.obj
 *.elf
-*.exe
 *.proto
 *.pb.cc
 *.pb.h
