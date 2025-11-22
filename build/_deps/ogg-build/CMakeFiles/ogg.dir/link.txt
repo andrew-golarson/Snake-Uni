@@ -1,2 +1,0 @@
-C:\mingw64\bin\ar.exe qc ..\..\thirdparty\SFML\lib\liboggd.a CMakeFiles/ogg.dir/Unity/unity_0_c.c.obj
-C:\mingw64\bin\ranlib.exe ..\..\thirdparty\SFML\lib\liboggd.a

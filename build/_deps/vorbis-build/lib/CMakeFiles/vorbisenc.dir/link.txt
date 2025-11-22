@@ -1,2 +1,0 @@
-C:\mingw64\bin\ar.exe qc ..\..\..\thirdparty\SFML\lib\libvorbisencd.a CMakeFiles/vorbisenc.dir/vorbisenc.c.obj
-C:\mingw64\bin\ranlib.exe ..\..\..\thirdparty\SFML\lib\libvorbisencd.a
