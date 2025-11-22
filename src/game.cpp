@@ -24,7 +24,7 @@ struct Fruit{
 bool Game::quit = false;
 Player pSnake[1600]; // segmenty snakea
 int Player::snakeSize = 3; // długość węża
-int Fruit::fruitEaten = 0;
+int Fruit::fruitEaten = 0; // liczba zjedzonych owoców
 Fruit apple; // owoc
 Grid tilemap[Grid::gridSize][Grid::gridSize];
 enum Direction{Down, Left, Right, Up} direction; // enum do przechowywania aktualnego kierunku ruchu
@@ -35,18 +35,18 @@ bool Game::paused = false;
 
 void Game::initVariables(){
     //OKNO
-    window = new sf::RenderWindow(sf::VideoMode({640,640}), "Snake", sf::Style::Close | sf::Style::Titlebar ); // okno
+    window = new sf::RenderWindow(sf::VideoMode({640,640}), "Snake", sf::Style::Close | sf::Style::Titlebar); // okno
     window -> setFramerateLimit(60);
     window -> setKeyRepeatEnabled(false);
 
     // UI
-    hungerBar.setSize({400.f, 20.f});
-    hungerBar.setFillColor(sf::Color(204,102,0));
-    hungerBar.setPosition({120.f, 618.f});
-    hungerBarBehind.setSize({404.f, 24.f});
+    hungerBar.setSize({397.f, 20.f}); // ustawienie rozmiaru
+    hungerBar.setFillColor(sf::Color(204,102,0)); // ustawiene koloru
+    hungerBar.setPosition({121.f, 618.f}); // ustawienie pozycji
+    hungerBarBehind.setSize({401.f, 24.f});
     hungerBarBehind.setFillColor(sf::Color::White);
-    hungerBarBehind.setPosition({118.f, 616.f});
-    hungerBarText.setPosition({282.f, 611.f});
+    hungerBarBehind.setPosition({119.f, 616.f});
+    hungerBarText.setPosition({281.f, 611.f});
     hungerBarText.setFillColor(sf::Color::Black);
     
 
@@ -195,17 +195,22 @@ void Game::update(){
         }
     
     if(!paused && !gameOver){
-    if(clock -> getElapsedTime().asMilliseconds() > 50){ // w.w. prędkość ruchu: co 75 ms
+    if(clock -> getElapsedTime().asMilliseconds() > 50){ // w.w. prędkość ruchu: co 50   ms
         snakeMove();
-        clock -> restart();
+        clock -> restart(); // restart czasu
     }
     }
 
     if(pSnake[0].x ==apple.x && pSnake[0].y ==apple.y ){
         Player::snakeSize++;
         Fruit::fruitEaten++;
-        hungerBar.setSize({400.f-(1.f*Fruit::fruitEaten), 20.f});
-        hungerBarText.setString(std::to_string(400-Fruit::fruitEaten) + "/400");
+        if(Fruit::fruitEaten == 397){ // ekran wygranej
+            gameOverText.setString("You Win");
+            gameOverText.setPosition({180.f, 14.f});
+            gameOver = true;
+        }
+        hungerBar.setSize({397.f-(1.f*Fruit::fruitEaten), 20.f}); // zmniejszanie paska zależnie od zjedzonych owoców
+        hungerBarText.setString(std::to_string(397-Fruit::fruitEaten) + "/397");
         apple.x = Grid::tileSize/2.f + distr(gen)*Grid::tileSize; // losowanie koordynatów owoca
         apple.y = Grid::tileSize/2.f + distr(gen)*Grid::tileSize; 
     }
@@ -346,7 +351,7 @@ Game::Game():
     gameOverText(font, "Game Over", 100),
     gameOverMainMenuButton(font, "Main Menu", 50),
     gameOverQuitButton(font, "Quit", 50), 
-    hungerBarText(font, "400/400", 23)
+    hungerBarText(font, "397/397", 23)
 {
     initVariables();
     Grid::initTilemap(tilemap); //inicjalizacja mapy
@@ -363,7 +368,7 @@ Game::~Game(){
     delete clock;
 }
 
-// defincje statycznych funkcji
+// defincje statycznych funkcji do wczytywania odpowiednich tekstur
 
 std::string Game::getHeadSkinPath(int skin){
     std::string path{};

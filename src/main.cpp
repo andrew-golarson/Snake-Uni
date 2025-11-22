@@ -2,7 +2,7 @@
 #include "mainMenu.h"
 int main(){
     while(true){
-        if(MainMenu::quit || Game::quit){
+        if(MainMenu::quit || Game::quit){// jesli nacisnięty przycisk quit
             return 0;
         }
         MainMenu menu;

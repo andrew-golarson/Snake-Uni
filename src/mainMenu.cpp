@@ -5,7 +5,7 @@ bool MainMenu::quit = false;
 
 void MainMenu::initMenuVariables(){
     menuWindow = new sf::RenderWindow(sf::VideoMode({640,640}), "Snake", sf::Style::Close | sf::Style::Titlebar); // okno
-    menuWindow -> setFramerateLimit(60); // FPS
+    menuWindow -> setFramerateLimit(60);
 
     // menu
     background.setTexture(&backgroundTex);
@@ -72,15 +72,15 @@ void MainMenu::update(){
         if(!skinSelectionScreen){
             if(playButton.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){ // sprawdzenie czy kursor zawiera sie w obszarze przycisku
                 playButton.setFillColor(sf::Color::Red); // kolor czerwony przy najechaniu
-                if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
-                    play = true; // rozpoczęciee pętli gry
-                    menuWindow -> close();
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){ // czy kliknięto lewy przycisk myszy
+                    play = true; // rozpoczęcie pętli gry
+                    menuWindow -> close(); // zamknięcie okna
                 }
             } else {
-                playButton.setFillColor(sf::Color::White);
+                playButton.setFillColor(sf::Color::White); // kolor biały jeśli kursor nie jest w obszarzee przycisku
             }
             if(quitButton.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){ 
-                quitButton.setFillColor(sf::Color::Red); // kolor czerwony przy najechaniu
+                quitButton.setFillColor(sf::Color::Red);
                 if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
                     MainMenu::quit = true;
                     menuWindow -> close();
@@ -89,25 +89,25 @@ void MainMenu::update(){
                 quitButton.setFillColor(sf::Color::White);
             }
             if(skinsButton.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){ 
-                skinsButton.setFillColor(sf::Color::Red); // kolor czerwony przy najechaniu
+                skinsButton.setFillColor(sf::Color::Red);
                 if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
                     skinSelectionScreen = true;
                 }
             } else {
                 skinsButton.setFillColor(sf::Color::White);
             }
-        }else{
+        }else{ // eventy menu wyboru skina
             if(skinBox1.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){ 
-                skinBox1.setOutlineColor(sf::Color::Red);
+                skinBox1.setOutlineColor(sf::Color::Red); // czerwona obramówka przy najechaniu
                 skinBox1.setOutlineThickness(3.f);
                 if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
-                    skin = 1;
+                    skin = 1; // numer skina do poźniejszego załadowania odpowednich tekstur
                 }
             }else if(skin == 1){
-                skinBox1.setOutlineThickness(3.f);
+                skinBox1.setOutlineThickness(3.f); // jeśli wybrany to wyświetl białą obramówkee
                 skinBox1.setOutlineColor(sf::Color::White);
             }else{
-                skinBox1.setOutlineThickness(0.f);
+                skinBox1.setOutlineThickness(0.f); // jeśli niewybrany i nie ma kursora w obszarze
             }
 
             if(skinBox2.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){ 
@@ -178,7 +178,7 @@ void MainMenu::update(){
             if(xButton.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){ 
                 xButton.setFillColor(sf::Color::Red);
                 if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){
-                    skinSelectionScreen = false;
+                    skinSelectionScreen = false; // wyjście do menu glównego
                 }
             }else{
                 xButton.setFillColor(sf::Color::White);

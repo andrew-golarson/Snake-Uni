@@ -7,8 +7,8 @@ class Grid{
     float y = 0;
     static constexpr int gridSize = 20; // rozmiar mapy gridSize*gridSize
     static constexpr float tileSize  = 32.f; // rozmiar jednej płytki 
-    sf::RectangleShape tile;
-    static void initTilemap(Grid tilemap[gridSize][gridSize]);
+    sf::RectangleShape tile; // płytka
+    static void initTilemap(Grid tilemap[gridSize][gridSize]); // do stworzneia mapy w grze
     static sf::Texture darkTex;
     static sf::Texture darkTwoTex;
 };

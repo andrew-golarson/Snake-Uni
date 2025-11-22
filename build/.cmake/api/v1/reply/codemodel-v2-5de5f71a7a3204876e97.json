@@ -735,7 +735,7 @@
 				{
 					"directoryIndex" : 11,
 					"id" : "sfml-audio::@94e5e32a8b522b7406cd",
-					"jsonFile" : "target-sfml-audio-Debug-b7ce31e10398cb5c7dfb.json",
+					"jsonFile" : "target-sfml-audio-Debug-d7bede02afb2207565b5.json",
 					"name" : "sfml-audio",
 					"projectIndex" : 1
 				},
@@ -791,14 +791,14 @@
 				{
 					"directoryIndex" : 17,
 					"id" : "vorbisenc::@692b0ee2b61df6760d20",
-					"jsonFile" : "target-vorbisenc-Debug-58ab8f5b6febb1f93c99.json",
+					"jsonFile" : "target-vorbisenc-Debug-5da87390f6f0f0c397d6.json",
 					"name" : "vorbisenc",
 					"projectIndex" : 7
 				},
 				{
 					"directoryIndex" : 17,
 					"id" : "vorbisfile::@692b0ee2b61df6760d20",
-					"jsonFile" : "target-vorbisfile-Debug-98110b4b73108b912869.json",
+					"jsonFile" : "target-vorbisfile-Debug-1f7b932b8999b890c733.json",
 					"name" : "vorbisfile",
 					"projectIndex" : 7
 				}

@@ -8,8 +8,8 @@ class MainMenu{
     void update();
     void initMenuVariables(); // inicjalizacja zmiennych
     bool play = false; // czy rozpocząć grę
-    static bool quit;
-    static int skin;
+    static bool quit; // czy wyjśc z aplikacji
+    static int skin; // który skin wczytać
     MainMenu();
     ~MainMenu();
 

@@ -8,7 +8,7 @@ class Game{
     void render(); // wyświetlanie rzeczy w oknie
     void initVariables();
     const bool Open() const; // sprawdzenie czy okno jest otwarte
-    static bool quit;
+    static bool quit; // czy wyjść z aplikacji
     static bool gameOver; // czy koniec gry
     static bool paused; // czy spauzować grę
     static std::string getHeadSkinPath(int skin); // inicjalizacja tekstur według wybranego skina
