@@ -23,8 +23,6 @@
 *.dylib
 
 # Executables
-snake
-snake.exe
 *.out
 *.app
 
