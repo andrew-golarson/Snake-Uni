@@ -6,7 +6,7 @@
 
 std::random_device rd; // do generacji losowej pozycji owoca
 std::mt19937 gen(rd());
-std::uniform_int_distribution<> distr(1, 19);
+std::uniform_int_distribution<> distr(0, 19);
 
 struct Player{
     public:
@@ -49,7 +49,6 @@ void Game::initVariables(){
     hungerBarText.setPosition({281.f, 611.f});
     hungerBarText.setFillColor(sf::Color::Black);
     
-
     clock = new sf::Clock; // zegar (w tym programie: prędkość ruchu)
     
     //ENTITIES
@@ -73,7 +72,6 @@ void Game::initVariables(){
     gameOverText.setPosition(sf::Vector2f(110.f, 14.f));
     gameOverMainMenuButton.setPosition(sf::Vector2f(210.f,230.f));
     gameOverQuitButton.setPosition(sf::Vector2f(210.f,330.f));
-    
 }
 
 void snakeMove(){
@@ -191,7 +189,6 @@ void Game::update(){
                     paused = !paused;
                 }
             }
-
         }
     
     if(!paused && !gameOver){
@@ -330,8 +327,6 @@ void Game::render(){
 
     window -> display(); // wyświetlenie wszystkiego
 }
-
-
 
 Game::Game():
     headTex(getHeadSkinPath(MainMenu::skin)), // inicjalizacja tekstur
